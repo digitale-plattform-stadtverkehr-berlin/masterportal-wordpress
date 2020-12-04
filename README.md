@@ -11,7 +11,7 @@ Link to masterportal
 
 wordpress shortcode
     application (required)
-    layer_ids
+    layer_ids (setzen der Hintergrundkarte notwendig, sonst wird die nicht angezeigt - in diesem Beispiel ist es XX)
 
 # Configure
 ## global config

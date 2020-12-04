@@ -15,7 +15,7 @@
 			"placeholder": "Suche"
 		},
 		"mapView": {
-			"backgroundImage": "./ressources/img/backgroundCanvas.jpeg",
+			"backgroundImage": "../../img/backgroundCanvas.jpeg",
 			"startCenter": [390702.983, 5819768.573],
 			"extent": [362458.918, 5799180.905, 422285.102, 5843603.314],
 			"startZoomLevel": 1,
@@ -72,7 +72,8 @@
 				{
                   "id": "OSM",
                   "name": "OSM Hintergrundkarte",
-				  "visibility": true
+				  "visibility": true,
+				  "isNeverVisibleInTree" : true
 				}
 			]
 		},

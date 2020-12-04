@@ -23,6 +23,17 @@ const Config = {
     quickHelp: {
         imgPath: "../../../img/"
     },
+    portalLanguage: {
+        enabled: true,
+        debug: false,
+        languages: {
+            de: "deutsch",
+            en: "englisch"
+        },
+        fallbackLanguage: "de",
+        changeLanguageOnStartWhen: ["querystring", "localStorage", "navigator", "htmlTag"],
+        loadPath: "../../mastercode/locales/{{lng}}/{{ns}}.json"
+    },
     layerConf: "../../../config/services-internet.json", 
     restConf: "../../../config/rest-services-internet.json",
     styleConf: "../../../config/style_v3.json",
