@@ -1,0 +1,14 @@
+[
+    {
+      "styleId": "TEU",
+      "rules": [
+        {
+          "style": {
+            "type": "circle",
+            "circleFillColor": [211, 211, 211, 1],
+            "clusterType": "circle"
+          }
+        }
+      ]
+    }
+  ]

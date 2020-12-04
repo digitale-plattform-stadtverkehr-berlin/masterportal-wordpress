@@ -1,0 +1,48 @@
+[
+    {
+      "id": "OSM",
+      "name": "Open Street Map Hintergrundkarte",
+      "url": "https://ows.terrestris.de/osm/service?",
+      "typ": "WMS",
+      "layers": "OSM-WMS",
+      "format": "image/png",
+      "version": "1.1.1",
+      "singleTile": false,
+      "transparent": true,
+      "transparency": 0,
+      "tilesize": "512",
+      "gutter": "0",
+      "minScale": "0",
+      "maxScale": "2500000",
+      "gfiAttributes": "ignore",
+      "gfiTheme": "default",
+      "layerAttribution": "nicht vorhanden",
+      "legendURL": "ignore",
+      "cache": true,
+      "featureCount": "1"
+    },
+    {
+      "id": "TEU",
+      "name": "TEU",
+      "url": "https://frost.mdh.l21s.de/FROST-Server",
+      "typ": "SensorThings",
+      "version": "1.1",
+      "gfiAttributes": {
+        "mqId": "TEU Sensor ID",
+        "@@iot.id": "FROST Server @iot.id",
+        "description": "Beschreibung",
+        "dataStreamName": "Messwerte",
+        "dataStreamValue": "Letzte Messergebnisse",
+        "dataStreamPhenomenonTime": "Messzeitpunkte"
+      },
+      "layerAttribution": "nicht vorhanden",
+      "legendURL": "",
+      "urlParameter": {
+        "filter": "endswith%28Datastreams%2Fproperties%2FserviceName%2C%20%27TEU%27%29",
+        "expand": "Locations,Datastreams/Observations($orderby=phenomenonTime%20desc;$top=1)"
+      },
+      "showNoDataValue": true,
+      "gfiTheme": "default",
+      "epsg": "EPSG:4326"
+    }
+  ]
