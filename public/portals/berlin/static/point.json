@@ -1,0 +1,25 @@
+{
+    "name": "anliegen_extern",
+    "type": "FeatureCollection",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "EPSG:4326"
+        }
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    13.377711,
+                    52.516260
+                ]
+            },
+            "properties": {
+                "source": "manuelle Eingabe"
+            }
+        }
+    ]
+}

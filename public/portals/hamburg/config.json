@@ -1,0 +1,89 @@
+{
+	"Portalconfig": {
+		"treeType": "light",
+		"searchBar": {
+			"osm": {
+				"minChars": 3,
+				"serviceId": "10",
+				"limit": 60,
+				"states": "",
+				"classes": "place,highway,building,shop,historic,leisure,city,county"
+			},
+      "visibleVector": {},
+      "tree": {},
+			"startZoomLevel": 9,
+			"placeholder": "Suche"
+		},
+		"mapView": {
+			"backgroundImage": "../../img/backgroundCanvas.jpeg",
+			"startCenter": [561210, 5932600],
+			"extent": [510000.0, 5850000.0, 625000.4, 6000000.0],
+			"startZoomLevel": 1
+		},
+		"menu": {
+			"tree": {
+				"name": "Themen"
+			},
+			"tools": {
+				"name": "Werkzeuge",
+				"children": {
+					"gfi": {
+						"name": "Informationen abfragen",
+						"isActive": true
+					},
+					"searchByCoord": {
+						"name": "Koordinatensuche"
+					},
+					"coord": {
+						"name": "Koordinaten abfragen"
+					},
+					"measure": {
+						"name": "Strecke / Fläche messen"
+					},
+					"draw": {
+						"name": "Zeichnen / Schreiben",
+						"glyphicon": "glyphicon-pencil"
+					},
+					"kmlimport": {
+						"name": "KML Import"
+					},
+					"saveSelection": {
+						"name": "Auswahl speichern"
+					}
+				}
+			},
+			"legend": {
+				"name": "Legende"
+			}
+		},
+		"controls": {
+			"zoom": true,
+			"orientation": {
+				"zoomMode": "once"
+			},
+			"attributions": true,
+			"mousePosition": true
+		}
+	},
+	"Themenconfig": {
+		"Hintergrundkarten": {
+			"Layer": [
+				{
+                  "id": "hamburg_city",
+                  "name": "Stadtplan Hamburg",
+				  "visibility": true
+				}
+			]
+		},
+		"Fachdaten": {
+			"Layer": [
+				{
+					"id": "hospitals",
+					"name": "Krankenhäuser",
+					"styleId": "1711",
+					"clusterDistance": 40
+				  }
+			]
+		}
+	}
+}

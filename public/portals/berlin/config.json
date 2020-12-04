@@ -70,19 +70,19 @@
 		"Hintergrundkarten": {
 			"Layer": [
 				{
-                  "id": "OSM",
-                  "name": "OSM Hintergrundkarte",
-				  "visibility": true,
-				  "isNeverVisibleInTree" : true
+                  "id": "berlin_city",
+                  "name": "Berlin",
+				  "visibility": true
 				}
 			]
 		},
 		"Fachdaten": {
 			"Layer": [
 				{
-					"id": "TEU",
-					"name": "Verkehrsdetektion",
-					"styleId": "TEU"
+					"id": "brandenburger_tor",
+					"name": "Brandenburger Tor",
+					"styleId": "grey",
+					"url": "wp-content/plugins/masterportal-wordpress/public/portals/berlin/static/point.json"
 				}
 			]
 		}

@@ -1,14 +1,32 @@
 [
-    {
-      "styleId": "TEU",
-      "rules": [
-        {
-          "style": {
-            "type": "circle",
-            "circleFillColor": [211, 211, 211, 1],
-            "clusterType": "circle"
-          }
+  {
+    "styleId": "grey",
+    "rules": [
+      {
+        "style": {
+          "type": "circle",
+          "circleFillColor": [
+            211,
+            211,
+            211,
+            1
+          ],
+          "clusterType": "circle"
         }
-      ]
-    }
-  ]
+      }
+    ]
+  },
+  {
+    "styleId": "1711",
+    "rules": [
+      {
+        "style": {
+          "type": "icon",
+          "clusterImageName": "krankenhaus.png",
+          "imageName": "krankenhaus.png",
+          "imageScale": 0.7
+        }
+      }
+    ]
+  }
+]
