@@ -33,7 +33,6 @@ if (!class_exists( 'Masterportal' ) ) {
 		function __construct() {
 			add_action( 'admin_menu', [$this, 'create_menu_info_page'] );
 			add_shortcode( 'masterportal', [$this, 'show_masterportal']  );
-			echo "init was called";
 		}
 
 		function create_menu_info_page() {
