@@ -1,8 +1,8 @@
 # Installation
 1) Download the code in this repository: [Download Zip](https://github.com/mobility-data-hub-berlin/masterportal-wordpress/archive/master.zip)  
 2. Install plugin - two alternatives  
-2.1 Upload via Wordpress UI: Click on Plugins -> Install -> upload the ZIP from step  
-2.2 Upload via SSH/FTP: Unzip the package from step 1 and upload its contents onto your wordpress server in the plugin directory
+2.1 **Upload via SSH/FTP (recommended)**: Unzip the package from step 1 and upload its contents onto your wordpress server in the plugin directory  
+2.2 Upload via Wordpress UI: Click on Plugins -> Install -> upload the ZIP from step (as this plugin is rather large, it may be that you hit your HTTP servers request size limit - make sure to configure it correctly or use the upload via FTP/SSH)  
 
 # Configuration
 For alle configuration options, please refer to the official Masterportal repository and its documentation: [Masterportal docs](https://bitbucket.org/geowerkstatt-hamburg/masterportal/src/stable/doc/doc.md). 
