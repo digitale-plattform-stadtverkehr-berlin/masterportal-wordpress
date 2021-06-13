@@ -1,4 +1,4 @@
-<?php 
+<?php
 /*
  Plugin Name: Masterportal
  Plugin URI: https://github.com/mobility-data-hub-berlin/masterportal-wordpress
@@ -29,7 +29,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 ! defined( 'ABSPATH' ) AND exit;
 
 if (!class_exists( 'Masterportal' ) ) {
-	class Masterportal {	
+	class Masterportal {
 		function __construct() {
 			add_action( 'admin_menu', [$this, 'create_menu_info_page'] );
 			add_shortcode( 'masterportal', [$this, 'show_masterportal']  );
@@ -45,11 +45,11 @@ if (!class_exists( 'Masterportal' ) ) {
 				"dashicons-location-alt"
 			);
 		}
-		
+
 		function include_config_page() {
 			include 'admin/config-info.php';
 		}
-		
+
 		function show_masterportal($atts) {
 			if(!isset($atts['portal_name'])) { return 'Shortcode nicht korrekt konfiguriert - Parameter "portal_name" fehlt.'; }
 			$portal_name = $atts['portal_name'];
@@ -58,13 +58,21 @@ if (!class_exists( 'Masterportal' ) ) {
 			if(!file_exists(dirname(__FILE__)."/public/portals/$portal_name/index.html")) {
 				return "Konfigurationsfehler - Portal mit dem Namen $portal_name nicht gefunden. Bitte prüfen Sie, ob der Ordner auf dem Server existiert.";
 			}
-		
+
 			$iframe_url = plugins_url("public/portals/$portal_name/index.html", __FILE__);
-			if(isset($atts['layer_ids'])) {
+			if ((isset($atts['lng'])) && (isset($atts['layer_ids']))) {
+				$iframe_url .= "?layerIds=";
+				$iframe_url .= $atts['layer_ids'];
+				$iframe_url .= "&lng=";
+				$iframe_url .= $atts['lng'];
+			} else if(isset($atts['lng'])) {
+				$iframe_url .= "?lng=";
+				$iframe_url .= $atts['lng'];
+			} else if(isset($atts['layer_ids'])) {
 				$iframe_url .= "?layerIds=";
 				$iframe_url .= $atts['layer_ids'];
 			}
-		
+
 			ob_start();
 			include 'public/includes/masterportal-iframe.php';
 			return ob_get_clean();
@@ -72,4 +80,3 @@ if (!class_exists( 'Masterportal' ) ) {
 	}
 	$masterportal = new Masterportal();
 }
-
