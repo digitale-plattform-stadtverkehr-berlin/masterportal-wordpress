@@ -50,6 +50,25 @@ if (!class_exists( 'Masterportal' ) ) {
 			include 'admin/config-info.php';
 		}
 
+		function underscoreToCamelCase($string) {
+	    $str = str_replace('_', '', ucwords($string, '_'));
+      $str = lcfirst($str);
+	    return $str;
+		}
+
+		function get_masterportal_url_params($atts) {
+			if (empty($atts)) {
+				return "";
+			} else {
+				$params = "";
+				foreach($atts as $pkey => $pVal) {
+					// if ($pkey != "")
+					$params .= $this->underscoreToCamelCase($pkey)."=".$pVal."&";
+				}
+				return "?".$params;
+			}
+		}
+
 		function show_masterportal($atts) {
 			if(!isset($atts['portal_name'])) { return 'Shortcode nicht korrekt konfiguriert - Parameter "portal_name" fehlt.'; }
 			$portal_name = $atts['portal_name'];
@@ -60,18 +79,8 @@ if (!class_exists( 'Masterportal' ) ) {
 			}
 
 			$iframe_url = plugins_url("public/portals/$portal_name/index.html", __FILE__);
-			if ((isset($atts['lng'])) && (isset($atts['layer_ids']))) {
-				$iframe_url .= "?layerIds=";
-				$iframe_url .= $atts['layer_ids'];
-				$iframe_url .= "&lng=";
-				$iframe_url .= $atts['lng'];
-			} else if(isset($atts['lng'])) {
-				$iframe_url .= "?lng=";
-				$iframe_url .= $atts['lng'];
-			} else if(isset($atts['layer_ids'])) {
-				$iframe_url .= "?layerIds=";
-				$iframe_url .= $atts['layer_ids'];
-			}
+			unset($atts["portal_name"]);
+			$iframe_url .= $this->get_masterportal_url_params($atts);
 
 			ob_start();
 			include 'public/includes/masterportal-iframe.php';

@@ -41,9 +41,14 @@ The plugin introduces a shortcode that you can include into any Wordpress page l
 [masterportal portal_name="berlin" layer_ids="berlin_city,brandenburger_tor" lng="de"]
 ```
 
+# attributes
+
 - `portal_name` (required) references the specific portal you want to show on that page (in this example either `hamburg` or `berlin`)
 - `layer_ids` (optional) references the specific layers you want to have selected in the masterportal (the layer ids are configured in `services-internet.json` and the corresponding `config.json`). If omitted, it shows the layers you have configured in your portal specific config.
 - `lng` (optional) the language the masterportal should use. `de` if omitted. The Masterportal uses https://github.com/i18next/i18next-browser-languageDetector
+- `zoomlevel` (optional) altering the the start zoomlevel
+
+All other attributes are added also as url parameters to the iframe url. The parameter names will be changed to masterportal compatible camel case i.e. `layer_ids` will be `layerIds`
 
 
 The code above would result in something like this:
